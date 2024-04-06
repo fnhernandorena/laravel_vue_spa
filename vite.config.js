@@ -1,10 +1,10 @@
 import { defineConfig } from 'vite';
-import Vue from '@vitejs/plugin-vue';
+import vue from '@vitejs/plugin-vue'; // Importa el plugin de Vue correctamente
 import laravel from 'laravel-vite-plugin';
 
 export default defineConfig({
     plugins: [
-        Vue,
+        vue(), // Inicia el plugin de Vue como una función
         laravel({
             input: ['resources/css/app.css', 'resources/js/app.js'],
             refresh: true,

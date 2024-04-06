@@ -1,34 +1,27 @@
-const Home = () => import('./components/Home.vue')
-const Contact = () => import('./components/Contact.vue')
-//blogs
-const Create = () => import('./components/blogs/Create.vue')
-const Show = () => import('./components/blogs/Show.vue')
-const Edit = () => import('./components/blogs/Edit.vue')
-
 export const routes = [
     {
         name: 'home',
         path: '/',
-        component: Home
+        component: () => import('./components/Home.vue')
     },
     {
         name: 'contact',
         path: '/contact',
-        component: Contact
+        component: () => import('./components/Contact.vue')
     },
     {
         name: 'showBlogs',
         path: '/blogs',
-        component: Show
+        component: () => import('./components/blogs/Show.vue')
     },
     {
         name: 'createBlogs',
         path: '/create',
-        component: Create
+        component: () => import('./components/blogs/Create.vue')
     },
     {
         name: 'editBlogs',
         path: '/edit/:id',
-        component: Edit
+        component: () => import('./components/blogs/Edit.vue')
     },
-]
+];
